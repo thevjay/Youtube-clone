@@ -13,8 +13,11 @@ const Sidebar = () => {
   return (
     <div className='p-5 shadow-lg w-48'>
       <ul>
-        <Link>
+        <Link to={'/'}>
           <li> Home</li>
+        </Link>
+        <Link to={'/demo'}>
+          <li>Demo</li>
         </Link>        
         <li> Shorts</li>
         <li> Videos</li>

@@ -41,3 +41,27 @@ export function generateRandomMessage(length) {
     return result;
 }
 
+
+ export function findPrime  (num)  {
+  if (num < 1) return "Invalid input: num should be >= 1";
+
+  let primes = [2, 3]; // Start with known primes
+  let n = 5;
+
+  const isPrime = (n) => {
+      let limit = Math.sqrt(n); // Only check up to sqrt(n)
+      for (let p of primes) {
+          if (p > limit) break; // No need to check further
+          if (n % p === 0) return false; // Not a prime
+      }
+      return true;
+  };
+
+  while (primes.length < num) {
+      if (isPrime(n)) primes.push(n);
+      n += 2; // Skip even numbers (except 2)
+  }
+
+  return primes[num - 1]; // Return the num-th prime
+};
+
